@@ -1,0 +1,22 @@
+/* app css stylesheet */
+
+body {
+	margin-top: 100px;
+}
+
+.card-size {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.question-box {
+	position: relative;
+
+}
+
+.question-box .remaining {
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}

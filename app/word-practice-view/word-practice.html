@@ -1,0 +1,38 @@
+<header class="card-size">
+	<h2>Word Review</h2>
+</header>
+<div id="review-box" class="well clearfix card-size">
+	<form class="form question-box" ng-submit="nextMemory()" ng-show="hasRemaining()">
+		<div class="form-group">
+			<h3>{{curMemory.word}}</h3>
+			<h4 class="remaining">
+				<span id="completed-count">{{completedCount}}</span>/<span id="total-count">{{totalCount}}</span>
+			</h4>
+		</div>
+
+		<div class="form-group">
+			<input name="guess" ng-model="guess" class="form-control" type="text" placeholder="Enter the word meaning">
+		</div>
+
+		<button type="submit" class="btn btn-primary pull-right">Check!</button>
+
+	</form>
+
+	<div ng-show="!listCreated()">
+		<h3>No list!</h3>
+		<p>You need to create a list before you can study it!</p>
+	</div>
+
+	<div ng-show="listCreated() && !hasRemaining()"> 
+		<h3>Congratulations!</h3>
+		<p>You have completed all your remaining memories!</p>
+		<p>Your next review session is: 
+			<span class="date">
+				<strong>
+					<ng-pluralize count="{{ nextSession() | amDifference : null : 'hours' }}" when="{ '0': 'now.', '1': '1 hour from now.', other: '{} hours from now.' }"></ng-pluralize>
+				</strong>
+			</span>
+		</span></p>
+	</div>
+
+</div>

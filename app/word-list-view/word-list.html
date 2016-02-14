@@ -1,0 +1,50 @@
+<h2>Your Memories</h2>
+<form name="addMemoryForm" ng-submit="addMemory(addMemoryForm)" novalidate>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr class="titles">
+					<td>Word</td>
+					<td>Meaning</td>
+					<td>Status</td>
+					<td>Next Review</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="memory in memories">
+					<td>{{memory.word}}</td>
+					<td>{{memory.meaning}}</td>
+					<td>{{memory.status}}</td>
+					<td> 
+						<ng-pluralize count="{{ memory.nextReview | amDifference : null : 'hours' }}" when="{ '0': 'now', '1': '1 hour', other: '{} hours' }"></ng-pluralize>
+					</td>
+					<td>	
+						<button type="button" class="btn btn-danger" ng-click="removeMemory(memory)">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true" aria-label="Delete this memory"></span>
+						</button>
+					</td>
+				</tr>
+			</tbody>	
+			<tr class="new-word">
+				<td>
+					<div class="form-group" show-validation>
+						<input type="text" class="form-control has-error" name="word" ng-model="newMemory.word" unique="memories" required>
+					</div>
+				</td>
+				<td>
+					<div class="form-group" show-validation>
+						<input type="text" class="form-control" name="meaning" ng-model="newMemory.meaning" required>
+					</div>
+				</td>
+				<td><input type="text" class="form-control" name="status" ng-model="newMemory.status" disabled></td>
+				<td><input type="date" class="form-control" name="nextReview" ng-model="newMemory.nextReview" disabled></td>
+				<td>	
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true" aria-label="Add a new memory"></span>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</form>
