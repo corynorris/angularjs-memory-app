@@ -1,10 +1,13 @@
 # AngularJS Memory App
-
+## Overview
 This is a very basic app that offers timed repetition memory services. There is an explanation
 along with a demo which can be found [here](http://corynorris.github.io/angularjs-memory-app/app/#/intro)
 
-## Limitations
+## Contents
+All of the code is done with `AngularJS` and can be found in the following folder:
+`app/`
 
+## Limitations
 This app is meant as basic demo of my Angular knowledge and therefore has the following limitations:
  - Only uses local storage (for a RESTful backend, checkout my other projects)
  - Isn't efficient with memory, loads all memories each time you change pages
