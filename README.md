@@ -4,7 +4,7 @@ This is a very basic app that offers timed repetition memory services. There is 
 along with a demo which can be found [here](http://corynorris.github.io/angularjs-memory-app/app/#/intro)
 
 ## Contents
-`app/` - All of the `AngularJS` code in appropriately named subdirectories  
+`app/` - All of the `AngularJS` code in appropriately named subdirectories.  
 
 ## Limitations
 This app is meant as basic demo of my Angular knowledge and therefore has the following limitations:
